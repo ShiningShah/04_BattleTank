@@ -21,6 +21,31 @@ void ATankPlayerController::BeginPlay()
 
 }
 
+void ATankPlayerController::Tick(float DeltaTime)
+{
+	Super::Tick(DeltaTime);
+	AimTowardCrosshair();
+}
+
+void ATankPlayerController::AimTowardCrosshair()
+{
+	if (!GetControlledTank()) { return; }
+	FVector HitLocation;
+	if (GetSightRayHitLocation(HitLocation))
+	{
+
+	}
+
+}
+
+bool ATankPlayerController::GetSightRayHitLocation(FVector& HitLocation) const
+{
+	HitLocation = FVector(1.0f);
+	return false;
+}
+
+
+
 ATank* ATankPlayerController::GetControlledTank() const
 {
 
