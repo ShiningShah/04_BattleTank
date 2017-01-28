@@ -10,9 +10,12 @@ class BATTLETANK_API ATank : public APawn
 {
 	GENERATED_BODY()
 
+		// Sets default values for this pawn's properties
+		ATank();
 public:
-	// Sets default values for this pawn's properties
-	ATank();
+	void AimAt(FVector HitLocation);
+
+private:
 
 	// Called when the game starts or when spawned
 	virtual void BeginPlay() override;
